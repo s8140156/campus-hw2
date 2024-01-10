@@ -44,7 +44,7 @@ body {
 
 .ti {  /*可調banner尺寸*/
 	width: 95%;
-	height: 130px;
+	height: 150px;
 	margin: auto;
 	position: relative;
 	background-size: cover;

@@ -376,7 +376,7 @@ if(!isset($_SESSION['login'])){
 						<tbody>
 							<tr>
 								<td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;" class="cent"><a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a></td>
-								<td><button onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">管理登出</button></td>
+								<td><button onclick="location.href='index.php'" style="width:99%; margin-right:2px; height:50px;">回首頁</button></td>
 								<!-- 先刪cookie, 第二個是重整畫面document.cookie=&#39;user=&#39;;location.replace(&#39;?&#39;) -->
 							</tr>
 						</tbody>
