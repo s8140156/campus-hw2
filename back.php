@@ -261,33 +261,57 @@ if(!isset($_SESSION['login'])){
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="?do=ad">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=title">
                 <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+                網站標題管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=ad">
+                <svg class="bi"><use xlink:href="#cart"/></svg>
                 動態文字廣告管理
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#cart"/></svg>
-                Products
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=mvim">
                 <svg class="bi"><use xlink:href="#people"/></svg>
-                Customers
+                動畫圖片管理
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=image">
                 <svg class="bi"><use xlink:href="#graph-up"/></svg>
-                Reports
+                校園映象資料管理
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=total">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
-                Integrations
+                進站總人數管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=bottom">
+                <svg class="bi"><use xlink:href="#puzzle"/></svg>
+                頁尾版權資料管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=news">
+                <svg class="bi"><use xlink:href="#puzzle"/></svg>
+                最新消息資料管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=admin">
+                <svg class="bi"><use xlink:href="#puzzle"/></svg>
+                管理者帳號管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=menu">
+                <svg class="bi"><use xlink:href="#puzzle"/></svg>
+                選單管理
               </a>
             </li>
           </ul>

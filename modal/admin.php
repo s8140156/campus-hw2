@@ -1,7 +1,12 @@
-<h3>新增管理者帳號</h3>
+<style>
+	.btn-warning {
+		background-color: pink !important;
+	}
+</style>
+<h3 class="text-center mt-3">新增管理者帳號</h3>
 <hr>
 <form action="./api/add.php" method="post" enctype="multipart/form-data">
-	<table>
+	<table class="col-8 m-auto">
 
 		<tr>
 			<td>帳號</td>
@@ -16,11 +21,11 @@
 			<td><input type="password" name="pw2" id=""></td>
 		</tr>
 	</table>
-	<div>
+	<div class="text-center">
 		<input type="hidden" name="table" value="<?= $_GET['table']; ?>">
 		<!-- 使用get or post差異？ -->
-		<input type="submit" value="新增">
-		<input type="reset" value="重置">
+		<input type="submit" class="btn btn-primary me-3" value="新增">
+		<input type="reset" class="btn btn-warning" value="重置">
 	
 	</div>
 </form>
