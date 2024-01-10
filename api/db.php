@@ -4,15 +4,15 @@ session_start();
 class DB{
 
     protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db06";
-    //protected $dsn = "mysql:host=localhost;charset=utf8;dbname=bquiz";
+    // protected $dsn = "mysql:localhost;charset=utf8;dbname=s1120406"; //遠端資料庫
     protected $pdo;
     protected $table;
     
     public function __construct($table)
     {
         $this->table=$table;
-        //$this->pdo=new PDO($this->dsn,'s1120401','s1120401');
-        $this->pdo=new PDO($this->dsn,'root','');
+        // $this->pdo=new PDO($this->dsn,'s1120406','s1120406');
+        $this->pdo=new PDO($this->dsn,'root',''); //上面如果改成遠端 這邊要跟著改
     }
 
 
