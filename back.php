@@ -225,6 +225,8 @@ if(!isset($_SESSION['login'])){
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white text-center" href="#">泰山訓練場</a>
+					<!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+					<button class="btn btn-light rounded-pill px-4 mx-4" onclick="location.href='index.php'">返回首頁</button>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -316,13 +318,13 @@ if(!isset($_SESSION['login'])){
             </li>
           </ul>
 
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+          <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
             <span>Saved reports</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
               <svg class="bi"><use xlink:href="#plus-circle"/></svg>
             </a>
-          </h6>
-          <ul class="nav flex-column mb-auto">
+          </h6> -->
+          <!-- <ul class="nav flex-column mb-auto">
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
@@ -347,17 +349,17 @@ if(!isset($_SESSION['login'])){
                 Year-end sale
               </a>
             </li>
-          </ul>
+          </ul> -->
 
           <hr class="my-3">
 
           <ul class="nav flex-column mb-auto">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
                 Settings
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <button class="nav-link d-flex align-items-center gap-2 btn btn btn-secondary rounded-pill px-3" onclick="location.href='./api/logout.php'">管理登出
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
@@ -370,13 +372,13 @@ if(!isset($_SESSION['login'])){
       </div>
     </div>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <div class="di" style="height:540px; border:#999 1px solid; width:76.5%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+    <div class="di" style="height:540px;; width:76.5%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
 					<!--正中央-->
 					<table width="100%">
 						<tbody>
 							<tr>
-								<td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;" class="cent"><a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a></td>
-								<td><button onclick="location.href='index.php'" style="width:99%; margin-right:2px; height:50px;">回首頁</button></td>
+								<!-- <td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;" class="cent"><a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a></td> -->
+								<!-- <td><button onclick="location.href='index.php'" style="width:99%; margin-right:2px; height:50px;">回首頁</button></td> -->
 								<!-- 先刪cookie, 第二個是重整畫面document.cookie=&#39;user=&#39;;location.replace(&#39;?&#39;) -->
 							</tr>
 						</tbody>

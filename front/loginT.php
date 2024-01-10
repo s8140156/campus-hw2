@@ -165,7 +165,9 @@ if(isset($_GET['error'])){
       </ul>
     </div>
 
-<div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">    
+<!-- <div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;"> -->
+<div class="di">    
+
 <main class="form-signin w-100 m-auto">
   <form>
     <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
