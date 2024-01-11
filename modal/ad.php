@@ -1,9 +1,3 @@
-<style>
-	.btn-warning {
-		background-color: pink !important;
-	}
-</style>
-
 <h3 class="text-center mt-3">新增動態文字廣告</h3>
 <hr>
 <form action="./api/add.php" method="post" enctype="multipart/form-data">
