@@ -311,9 +311,9 @@ if(!isset($_SESSION['login'])){
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="?do=menu">
+              <a class="nav-link d-flex align-items-center gap-2" href="?do=slogan">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
-                選單管理
+                班版文字管理
               </a>
             </li>
           </ul>

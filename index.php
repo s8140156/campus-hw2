@@ -50,12 +50,12 @@ if(isset($_GET['error'])){
     <div class="container d-flex align-items-center justify-content-between">
     <?php
 			$title = $Title->find(['sh' => 1]);
-      $ad = $Ad->find(['sh' => 1]);
+      $slogan = $Slogan->find(['sh' => 1]);
 						?>
 
       <a href="index.php" class="logo"><img src="./img/<?=$title['img'];?>" alt="" class="img-fluid"></a>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <h1 class="logo"><a href="index.php"><?=$ad['text'];?></a></h1>
+      <h1 class="logo"><a href="index.php"><?=$slogan['text'];?></a></h1>
       <?php
       
 						?>
@@ -144,8 +144,17 @@ if(isset($_GET['error'])){
       <div class="container">
 
         <div class="section-title">
-          <h2>My & Family</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>歡迎來到<?=$slogan['text'];?></h2>
+          <marquee scrolldelay="" direction="" style="width:100%; height:30px; color:blue;font-size:larger">
+            <?php
+            $ads = $Ad->all(['sh' => 1]);
+            foreach ($ads as $ad) {
+              echo $ad['text'];
+              echo '&nbsp;&nbsp;/&nbsp;&nbsp;';
+            }
+            ?>
+            </marquee>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row content">

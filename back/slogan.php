@@ -8,13 +8,13 @@
 <div class="container m-5">
 	<div class="row">
 		<div class="col">
-			<p class="t cent botli">動態文字廣告管理</p>
+			<p class="t cent botli">班版文字管理</p>
 			<form method="post" action="./api/edit.php">
 				<table class="table table-bodered text-center mt-1">
 					<tbody>
 						<tr class="yel">
 		
-							<td width="80%">動態文字廣告</td>
+							<td width="80%">班版文字</td>
 							<td width="10%">顯示</td>
 							<td width="10%">刪除</td>
 							<td></td>
@@ -30,9 +30,9 @@
 									<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
 								</td>
 								<td width="7%">
-									<!-- <input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
+									<input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
 								<!-- <input class="form-check-input" type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
-									<input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+									<!-- <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
 								</td>
 								<td width="7%">
 									<input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
@@ -50,7 +50,7 @@
 						<tr>
 							<input type="hidden" name="table" value="<?= $do; ?>">
 							<!-- 可是為什麼要給變數？ -->
-							<td width="200px"><input type="button" class="btn btn-primary" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,'./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增動態文字廣告"></td>
+							<td width="200px"><input type="button" class="btn btn-primary" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,'./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增班版文字"></td>
 							<td class="cent"><input type="submit" class="btn btn-success me-3" value="修改確定"><input type="reset" class="btn btn-danger" value="重置"></td>
 						</tr>
 					</tbody>

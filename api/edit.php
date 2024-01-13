@@ -26,7 +26,7 @@ foreach($_POST['id'] as $key => $id){
             case "title":
                 $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
             break;
-            case "ad":
+            case "slogan":
                 $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
             break;
             case "admin":
