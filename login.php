@@ -107,11 +107,15 @@ if(isset($_GET['error'])){
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+      .btn-danger {
+        background-color: pink !important;
+        color:black!important;
+      }
     </style>
 
     
     <!-- Custom styles for this template -->
-    <link href="sign-in.css" rel="stylesheet">
+    <link href="./css/sign-in.css" rel="stylesheet">
   </head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -163,22 +167,19 @@ if(isset($_GET['error'])){
           </button>
         </li>
       </ul>
-    </div>
-
-<!-- <div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;"> -->
-<div class="di">    
+    </div>  
 
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form method="post" action="./api/check.php">
     <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal">管理員登入區</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input type="text" name="acc" class="form-control" id="floatingInput" placeholder="account name">
+      <label for="floatingInput">Account Name</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="pw" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -188,11 +189,12 @@ if(isset($_GET['error'])){
         Remember me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+    <input type="submit" class="btn btn-success me-3" value="送出">
+    <input type="reset" class="btn btn-danger" value="清除">
+    <!-- <button class="btn btn-primary w-100 py-2" type="submit"></button> -->
+    <!-- <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p> -->
   </form>
 </main>
-</div>
 <script src="./js/bootstrap.bundle.min.js"></script>
 
     </body>

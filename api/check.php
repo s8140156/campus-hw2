@@ -7,7 +7,7 @@ if($Admin->count(['acc'=>$_POST['acc'],'pw'=>$_POST['pw']])>0){
 	$_SESSION['login']=$_POST['acc']; //如果上述判斷有的話, 因為也沒撈資料 直接post的資料存進session紀錄狀態
 	to("../back.php");
 }else{
-	to("../index.php?do=login&error=帳號或密碼錯誤");
+	to("../login.php?error=帳號或密碼錯誤");
 }
 // 這邊是在判斷進站人數不重複計算
 

@@ -38,16 +38,21 @@
 </head>
 
 <body>
-  <!-- test -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
+    <?php
+			$title = $Title->find(['sh' => 1]);
+      $ad = $Ad->find(['sh' => 1]);
+						?>
 
-      <a href="index.php" class="logo"><img src="./img/01B01.jpg" alt="" class="img-fluid"></a>
+      <a href="index.php" class="logo"><img src="./img/<?=$title['img'];?>" alt="" class="img-fluid"></a>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <h1 class="logo"><a href="index.php">泰山訓練場</a></h1>
-
+      <h1 class="logo"><a href="index.php"><?=$ad['text'];?></a></h1>
+      <?php
+      
+						?>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
@@ -71,7 +76,21 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <!-- <li><a href="contact.html">Contact</a></li> -->
+          <?php
+					if(isset($_SESSION['login'])){
+          ?>
+          <li>
+            <button class="btn btn-success rounded-pill px-3" onclick="location.href='back.php'">返回管理</button>
+            <?php
+					  }else{
+	          ?>
+            <button class="btn btn-success rounded-pill px-3" onclick="location.href='login.php'">管理登入</button>
+          </li>
+            <?php
+				    }
+	          ?>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -253,6 +272,12 @@
 
   <!-- Template Main JS File -->
   <script src="./js/mainF.js"></script>
+  <script src="./js/jquery-1.9.1.min.js"></script>
+	<script src="./js/js.js"></script>
+
+  <script>
+
+  </script>
 
 </body>
 

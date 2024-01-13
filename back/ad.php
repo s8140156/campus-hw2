@@ -30,7 +30,9 @@
 									<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
 								</td>
 								<td width="7%">
-									<input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+									<input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+								<!-- <input class="form-check-input" type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
+									<!-- <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
 								</td>
 								<td width="7%">
 									<input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
