@@ -5,9 +5,9 @@ if(isset($_SESSION['login'])){
 }
 // 這應該是判斷如果session有收到login資訊則直接轉到後台
 
-if(isset($_GET['error'])){
-	echo "<script>alert('{$_GET['error']}')</script>";
-}
+// if(isset($_GET['error'])){
+// 	echo "<script>alert('{$_GET['error']}')</script>";
+// }
 // 這邊使用js當登入錯誤使用alert顯示錯誤訊息
 
 ?>

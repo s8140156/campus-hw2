@@ -1,4 +1,10 @@
-<?php include_once "./api/db.php"; ?>
+<?php include_once "./api/db.php"; 
+
+if(isset($_GET['error'])){
+	echo "<script>alert('{$_GET['error']}')</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
