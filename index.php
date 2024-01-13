@@ -158,25 +158,43 @@ if(isset($_GET['error'])){
         </div>
 
         <div class="row content">
-          <div class="col-lg-6">
+          <div class="col-lg-6" id="mwww" loop="true"> <!--這邊是魔幻動圖-->
             <img src="./img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
+            <!-- <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </p> -->
+            <ul class="ssaa"> <!--這邊是消息區-->
+            <?php
+			        $news = $News->all(['sh' => 1], ' limit 5');
+			        foreach ($news as $n) {
+              echo "<li><i class='ri-check-double-line'></i>";
+              echo mb_substr($n['text'], 0, 20);
+              echo "<div class='all' style='display:none'>";
+              echo $n['text'];
+              echo "</div>";
+              echo "...</li>";
+               }
+            ?>
+              <!-- <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li> -->
+              <!-- <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li> -->
+              <!-- <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li> -->
             </ul>
-            <p>
+            <!-- <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
               culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="our-story.html" class="btn-learn-more">Learn More</a>
+            </p> -->
+            <?php
+			        if ($News->count(['sh' => 1]) > 5) {
+				      echo "<a href='./front/news.php' class='btn-learn-more'>Learn More</a>";
+		        	}
+			      ?>
+            <!-- <a href="our-story.html" class="btn-learn-more">Learn More</a> -->
+		        <div id="altt" style="position: absolute; width: 350px; min-height: 100px; background-color: rgb(255, 255, 204); top: 50px; left: 130px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
+            
           </div>
         </div>
 
@@ -289,8 +307,45 @@ if(isset($_GET['error'])){
   <script src="./js/mainF.js"></script>
   <script src="./js/jquery-1.9.1.min.js"></script>
 	<script src="./js/js.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
 
   <script>
+    		var lin = new Array();
+		<?php
+		$lins = $Mvim->all(['sh' => 1]);
+		foreach ($lins as $lin) {
+			echo "lin.push('{$lin['img']}');";
+		}
+		?>
+		var now = 0;
+		ww();
+
+		if (lin.length > 1) {
+			setInterval("ww()", 3000);
+			now = 1;
+		}
+
+		function ww() {
+			$("#mwww").html("<embed loop=true src='./img/" + lin[now] + "' style='width:99%; height:90%;'></embed>")
+			now++;
+			if (now >= lin.length)
+				now = 0;
+		}
+
+    $(".ssaa li").hover(
+				function() {
+					$("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
+					// .html 是在做把後面pre(整段字串)放到id=altt(容器)裡面
+					// $(this)=>是指hover過去該<li>的元素以下的容器.children (.all=>設定class=all)
+					// 最後一個.html() 就像sql all() 抓取整個資料
+					$("#altt").show()
+				}
+			)
+			$(".ssaa li").mouseout(
+				function() {
+					$("#altt").hide()
+				}
+			)
 
   </script>
 

@@ -78,20 +78,20 @@
 		<!-- 這邊是最新消息區的彈出視窗(顯示文章完整內容) -->
 		
 		<script>
-			$(".ssaa li").hover(
-				function() {
-					$("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
-					// .html 是在做把後面pre(整段字串)放到id=altt(容器)裡面
-					// $(this)=>是指hover過去該<li>的元素以下的容器.children (.all=>設定class=all)
-					// 最後一個.html() 就像sql all() 抓取整個資料
-					$("#altt").show()
-				}
-			)
-			$(".ssaa li").mouseout(
-				function() {
-					$("#altt").hide()
-				}
-			)
+			// $(".ssaa li").hover(
+			// 	function() {
+			// 		$("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
+			// 		// .html 是在做把後面pre(整段字串)放到id=altt(容器)裡面
+			// 		// $(this)=>是指hover過去該<li>的元素以下的容器.children (.all=>設定class=all)
+			// 		// 最後一個.html() 就像sql all() 抓取整個資料
+			// 		$("#altt").show()
+			// 	}
+			// )
+			// $(".ssaa li").mouseout(
+			// 	function() {
+			// 		$("#altt").hide()
+			// 	}
+			// )
 		</script>
 	</div>
 </div>
