@@ -1,15 +1,17 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
+<div class="container m-5">
+	<div class="row">
+		<div class="col">
 	<p class="t cent botli">最新消息資料管理</p>
 	<form method="post" action="./api/edit.php">
-		<table width="100%">
-			<tbody>
-				<tr class="yel">
-
-					<td width="80%">最新消息資料內容</td>
-					<td width="10%">顯示</td>
-					<td width="10%">刪除</td>
-					<td></td>
+		<table class="table">
+			<thead class="table-light">
+				<tr>
+					<th width="80%">最新消息資料內容</th>
+					<th width="10%">顯示</th>
+					<th width="10%">刪除</th>
+					<th></th>
 				</tr>
+			</thead>
 				<?php
 				$total = $DB->count();
 				//後台new的文章筆數是全部
@@ -27,18 +29,19 @@
 				foreach ($rows as $row) {
 
 				?>
+			<tbody>
 					<tr>
 						<td width="23%">
-							<textarea type="text" name="text[]" style="width:90%"><?= $row['text']; ?></textarea>
+							<textarea class="form-control" type="text" name="text[]" style="width:90%"><?= $row['text']; ?></textarea>
 							<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
 
 							<!--  改成textarea及將value傳值改接到後面,不要斷行 -->
 						</td>
 						<td width="7%">
-							<input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+							<input class="form-check-input" type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
 						</td>
 						<td width="7%">
-							<input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+							<input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
 						</td>
 
 					</tr>
@@ -70,8 +73,8 @@
 				<tbody>
 					<tr>
 						<input type="hidden" name="table" value="<?= $do; ?>">
-						<td width="200px"><input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,'./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增最新消息資料"></td>
-						<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+						<td width="200px"><input type="button" class="btn btn-primary" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,'./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增最新消息資料"></td>
+						<td class="cent"><input type="submit" class="btn btn-success me-3" value="修改確定"><input type="reset" class="btn btn-danger" value="重置"></td>
 					</tr>
 				</tbody>
 			</table>
@@ -79,4 +82,6 @@
 		</div>
 
 	</form>
+	</div>
+	</div>
 </div>

@@ -9,10 +9,10 @@
 					<div class="input-group mb-3">
 					<span class="input-group-text" id="inputGroup-sizing-default">進站總人數</span>
 					<input class="form-control" type="number" name="total" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="<?= $Total->find(1)['total']; ?>">
-					<input type="hidden" name="table" value="<?= $do; ?>">
 					<!-- <input type="text" name="text" id="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> -->
+					<input type="hidden" name="table" value="<?= $do; ?>">
 				</div>
-						<th></th>
+						<!-- <th></th> -->
 					</tr>
 			</thead>
 		</table>

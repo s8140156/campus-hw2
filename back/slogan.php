@@ -10,32 +10,32 @@
 		<div class="col">
 			<p class="t cent botli">班版文字管理</p>
 			<form method="post" action="./api/edit.php">
-				<table class="table table-bodered text-center mt-1">
-					<tbody>
-						<tr class="yel">
-		
-							<td width="80%">班版文字</td>
-							<td width="10%">顯示</td>
-							<td width="10%">刪除</td>
-							<td></td>
+				<table class="table">
+					<thead class="table-light">
+						<tr>
+							<th width="80%">班版文字</th>
+							<th width="10%">顯示</th>
+							<th width="10%">刪除</th>
+							<th></th>
 						</tr>
-						<?php
+					</thead>
+					<?php
 						$rows = $DB->all();
 						foreach ($rows as $row) {
-		
-						?>
+							?>
+					<tbody>
 							<tr>
 								<td width="23%">
-									<input type="text" name="text[]" style="width:90%" value="<?= $row['text']; ?>">
+									<input class="form-control" type="text" name="text[]" style="width:90%" value="<?= $row['text']; ?>">
 									<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
 								</td>
 								<td width="7%">
-									<input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+									<input class="form-check-input" type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
 								<!-- <input class="form-check-input" type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
 									<!-- <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
 								</td>
 								<td width="7%">
-									<input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+									<input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
 								</td>
 		
 							</tr>

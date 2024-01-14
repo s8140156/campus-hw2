@@ -11,7 +11,7 @@
 								<input class="form-control" type="text" name="bottom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="<?= $Bottom->find(1)['bottom']; ?>">
 								<input type="hidden" name="table" value="<?= $do; ?>">
 							</div>
-							<th></th>
+							<!-- <th></th> -->
 						</tr>
 					</thead>
 				</table>

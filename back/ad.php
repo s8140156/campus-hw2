@@ -45,7 +45,7 @@
 						?>
 					</tbody>
 				</table>
-				<table class="table table-bodered text-center">
+				<table style="margin-top:40px; width:70%;">
 					<tbody>
 						<tr>
 							<input type="hidden" name="table" value="<?= $do; ?>">
