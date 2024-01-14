@@ -1,85 +1,327 @@
-<div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
-	<!-- <marquee scrolldelay="120" direction="left" style="position:absolute; width:100%; height:40px;">
-	</marquee> -->
-	<?php include "marquee.php"; ?>
-		<!-- 將跑馬燈功能(獨立一個功能) include到其他前台頁面（因為前台頁面都是獨立的） -->
+<!-- <?php include_once "../api/db.php";?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Our Story - MeFamily Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../img/favicon.png" rel="icon">
+  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/bootstrap-icons.css" rel="stylesheet">
+  <link href="../css/boxicons.min.css" rel="stylesheet">
+  <link href="../css/glightbox.min.css" rel="stylesheet">
+  <link href="../css/remixicon.css" rel="stylesheet">
+  <link href="../css/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../css/styleF.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MeFamily
+  * Updated: Jan 09 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Me &amp; Family</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="../index.php">Home</a></li>
+          <li><a class="active" href="our-story.html">Our Story</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>小道消息</h2>
+          <ol>
+            <li><a href="../index.php">Home</a></li>
+            <li>小道消息</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
 
 
-	<div style="height:32px; display:block;"></div>
-	<!--正中央-->
-	<h3>更多最新消息顯示區</h3>
-	<hr>
-	<?php
-	$total = $DB->count(['sh' => 1]);
-	// 因為是前台 只能show select有顯示的 所以資料庫在count要加上只有顯示的
-	$div = 5;
-	$pages = ceil($total / $div);
-	$now = $_GET['p'] ?? 1;
-	// 這邊是三元運算式(而且又簡寫) 主要是取得目前在哪一頁藉由網址p傳值,but這邊有判斷
-	//如果 $_GET['p'] 存在且不為 null，則將其值賦給 $now；否則，將默認值 1 (第一頁)賦給 $now。
-	//原式：$now = isset($_GET['p']) ? $_GET['p'] : 1;
-	$start = ($now - 1) * $div;
-	//計算當前頁面的"起始索引"，用於資料庫查詢
-	//起始索引從0(主要從0開始),5,10, 所以要找起始索引 可以從傳來的頁數-1 就是該頁索引值
-	$news = $News->all(['sh' => 1], " limit $start,$div");
-	// 從資料庫撈有顯示的 並限制是從該開始頁開始,每頁取五筆資料
-	?>
-	<ol start='<?= $start + 1; ?>'>
-		<!-- 這邊把ul->ol 然後就不使用style:decimal -->
-		<!-- decimal:數字 是說列表有編碼 沒有decimal就是點點 style還有square... -->
-		<!-- 因為$start是索引值 與頁數會差一 所以+1 ex.第二頁 索引值5+1 第二頁第一篇文章編號就是6 -->
-		<?php
-		foreach ($news as $n) {
-			echo "<li class='sswww'>";
-			// 在li放入class='sswww' 用在下面js使用, 放在li滑鼠在滑過每條文章有彈出視窗顯示
-			echo mb_substr($n['text'], 0, 20);
-			echo "<div class='all' style='display:none'>";
-			echo $n['text'];
-			echo "</div>";
-			echo "...</li>";
-		}
-		?>
-	</ol>
-	<div class="cent">
+    <!-- ======= Story Intro Section ======= -->
+    <section id="story-intro" class="story-intro">
+      <div class="container">
 
-		<?php
-		if ($now > 1) {
-			$prev = $now - 1;
-			echo "<a href='?do=$do&p=$prev'> < </a>";
-		}
+        <div class="row">
+    <?php
+    $imgs = $Image->all(['sh' => 1]," limit 5");
+    foreach ($imgs as $idx => $img) {
+        
+        ?>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="<?=$img['img'];?>" class="img-fluid" alt="">
+          </div>
+          <?php
+        }
+        
+        ?>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+        <?php
+            $news = $News->all(['sh'=>1], " limit 5");
+            foreach ($news as $n) {
+        ?>
+            <!-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> -->
+            <!-- <p class="fst-italic"><?=$n['text'];?></p> -->
+            <!-- <ul>
+              <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p> -->
+          </div>
+        <?php
+            }
+        ?>
+        </div>
 
-		for ($i = 1; $i <= $pages; $i++) {
-			$fontsize = ($now == $i) ? '24px' : '16px';
-			echo "<a href='?do=$do&p=$i' style='font-size:$fontsize'> $i </a>";
-		}
+      </div>
+    </section><!-- End Story Intro Section -->
 
-		if ($now < $pages) {
-			$next = $now + 1;
-			echo "<a href='?do=$do&p=$next'> > </a>";
-		}
-		?>
-	</div>
-</div>
-<!-- 以下這段容器+js是從back.php(其實index也有)用在顯示文章旁邊彈開視窗搬過來的-->
-<!-- 解題過程 有發生裡面pre格式無法顯現(因為index也有同樣的程式 造成程式重複跑？) -->
-<!-- 因為news這是前台的所以index那邊的js要刪除或是註解以免程式重複跑造(應該index那邊先)成格式無法導入 -->
-<div id="alt" style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;">
-</div>
-<script>
-	$(".sswww").hover(
-		function() {
+    <!-- ======= Featured Members Section ======= -->
+    <section id="featured-members" class="featured-members">
+      <div class="container">
 
-			$("#alt").html('<pre>' + $(this).children(".all").html() + '</pre>').css({
-				//這邊有另加上<pre></pre>
-				"top": $(this).offset().top - 50
-				//offset跳開 位移
-			})
-			$("#alt").show()
-		}
-	)
-	$(".sswww").mouseout(
-		function() {
-			$("#alt").hide()
-		}
-	)
-</script>
+        <div class="row content">
+          <div class="col-lg-6">
+            <img src="../img/intro.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-3 pt-lg-0">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic"></p>
+            <ul>
+              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/members/featured-members-2.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0">
+            <h3>Corporis temporibus maiores provident</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <img src="assets/img/members/featured-members-3.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-3 pt-lg-0">
+            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
+            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+            <ul>
+              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/members/featured-members-4.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0">
+            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>  
+    <!-- End Featured Members Section -->
+
+    <!-- ======= Members Section ======= -->
+    <section id="members" class="members">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/members/member-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+                <p>Sint qui cupiditate. Asperiores fugit impedit aspernatur et mollitia. Molestiae qui placeat labore assumenda id qui nesciunt quo reprehenderit. Rem dolores similique quis soluta culpa enim quia ratione ea.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/members/member-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Niall Katz</h4>
+                <span>Marketing</span>
+                <p>Aut ex esse explicabo quia harum ea accusamus excepturi. Temporibus at quia quisquam veritatis impedit. Porro laborum voluptatum sed necessitatibus a saepe. Deserunt laborum quasi consequatur voluptatum iusto sint qui fuga vel. Enim eveniet sed quibusdam rerum in. Non dicta architecto consequatur quo praesentium nesciunt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/members/member-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Demi Lewis</h4>
+                <span>Financing</span>
+                <p>Amet labore numquam corrupti est. Nostrum amet voluptas consectetur dolor voluptatem architecto distinctio consequuntur eligendi. Quam impedit enim aut nesciunt aut dicta quam exercitationem. Reprehenderit exercitationem magnam. Ullam similique ut voluptas totam nobis porro accusamus nulla omnis.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>End Members Section
+
+  </main>  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>MeFamily</h3>
+      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>MeFamily</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/glightbox.min.js"></script>
+  <script src="../js/isotope.pkgd.min.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../js/mainF.js"></script>
+  <script src="../js/jquery-1.9.1.min.js"></script>
+  <script src="../js/js.js"></script>
+
+</body>
+
+</html>

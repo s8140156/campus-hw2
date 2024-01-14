@@ -147,7 +147,7 @@ if(isset($_GET['error'])){
 
 
         <div class="section-title">
-          <h2>歡迎來到<?=$slogan['text'];?></h2>
+          <h2>歡迎來到<span style="color:blue"><?=$slogan['text'];?></span></h2>
           <marquee scrolldelay="" direction="" style="width:100%; height:30px; color:blue;font-size:larger">
             <?php
             $ads = $Ad->all(['sh' => 1]);

@@ -226,7 +226,7 @@ if(!isset($_SESSION['login'])){
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white text-center" href="#">泰山訓練場</a>
 					<!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-					<button class="btn btn-light rounded-pill px-4 mx-4" onclick="location.href='index.php'">返回首頁</button>
+					<button class="btn btn-light rounded-pill px-3 mx-4" onclick="location.href='index.php'">返回首頁</button>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
