@@ -372,17 +372,8 @@ if(!isset($_SESSION['login'])){
       </div>
     </div>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <div class="di" style="height:540px;; width:76.5%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
-					<!--正中央-->
-					<table width="100%">
-						<tbody>
-							<tr>
-								<!-- <td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;" class="cent"><a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a></td> -->
-								<!-- <td><button onclick="location.href='index.php'" style="width:99%; margin-right:2px; height:50px;">回首頁</button></td> -->
-								<!-- 先刪cookie, 第二個是重整畫面document.cookie=&#39;user=&#39;;location.replace(&#39;?&#39;) -->
-							</tr>
-						</tbody>
-					</table>
+    <div class="di" style="height:600px;; width:80%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+
 	
 					<?php
 					$do=$_GET['do']??'title'; //三元運算式 只有在isset判斷下可以這樣短寫=>這邊是判斷是否有收到$_GET do值
