@@ -219,13 +219,29 @@ if(isset($_GET['error'])){
           <h2>實用小工具</h2>
         </div>
 
+
         <div class="row">
+        <?php
+	
+        $tools=$Tool->all(['sh' => 1]," limit 6");
+        foreach ($tools as $tool) {
+        ?>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><?=$tool['fontawesome'];?></div>
+            <h4 class="title"><a href="<?=$tool['href'];?>"><?=$tool['title'];?></a></h4>
+            <p class="description"><?=$tool['text'];?></p>
+          </div>
+          <?php
+            }
+            ?>
+          <!-- <div class="row">
           <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="fa-solid fa-utensils"></i></div>
             <h4 class="title"><a href="http://dinbendon.kento520.tw/">你餓了嗎？</a></h4>
             <p class="description">要訂便當的同學，請在10:00前將錢交給值日生，最好是都給我零錢，謝謝</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box">
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="fa-solid fa-school"></i></div>
             <h4 class="title"><a href="https://stustkyhkm.wda.gov.tw/">上課遲到了嗎？</a></h4>
             <p class="description">走過路過，不要錯過！看到異色的寶可夢立馬停下來抓，遲到了別忘了請假~還是請大家上下課注意路上安全喔！</p>
@@ -249,7 +265,7 @@ if(isset($_GET['error'])){
             <div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
             <h4 class="title"><a href="">under maintenance</a></h4>
             <p class="description">Coming soon...</p>
-          </div>
+          </div> -->
         </div>
         <!-- <i class="fa-solid fa-triangle-exclamation"></i> --> <!--注意sign-->
         <!-- <i class="fa-solid fa-person-digging"></i> --> <!--施工-->

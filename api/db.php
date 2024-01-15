@@ -152,6 +152,7 @@ $News=new DB('news');
 $Admin=new DB('admin');
 $Menu=new DB('menu');
 $Slogan=new DB('slogan');
+$Tool=new DB('tool');
 
 if(isset($_GET['do'])){
     if(isset(${ucfirst($_GET['do'])})){
