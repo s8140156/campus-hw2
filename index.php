@@ -42,6 +42,11 @@ if(isset($_GET['error'])){
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .btn-success{
+      background-color: #24325d!important;
+    }
+  </style>
 </head>
 
 <body>
@@ -147,7 +152,7 @@ if(isset($_GET['error'])){
 
 
         <div class="section-title">
-          <h2>歡迎來到<span style="color:blue"><?=$slogan['text'];?></span></h2>
+          <h2>歡迎來到<span style="color:#24325d"><?=$slogan['text'];?></span></h2>
           <marquee scrolldelay="" direction="" style="width:100%; height:30px; color:blue;font-size:larger">
             <?php
             $ads = $Ad->all(['sh' => 1]);
@@ -228,7 +233,7 @@ if(isset($_GET['error'])){
           <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
             <h4 class="title"><a href="https://wda.mackliu.com/schedule/149632">什麼？下週有3堂PHP的課？</a></h4>
-            <p class="description">隨時掌握何時會看到劉老師(?)請注意</p>
+            <p class="description">隨時掌握何時會看到劉老師(誤?)乙級題組你練習了沒？</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="fa-solid fa-person-chalkboard"></i></div>
@@ -314,7 +319,7 @@ if(isset($_GET['error'])){
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/ -->
-        Designed by <a href="https://bootstrapmade.com/">Julie Chen. Yeah, it's moi</a>
+        Designed by <a href="https://wda.mackliu.com/s1120406/campus_hw_c/">Julie Chen. Yeah, it's moi</a>
       </div>
     </div>
   </footer><!-- End Footer -->
