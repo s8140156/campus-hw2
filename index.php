@@ -335,7 +335,7 @@ if(isset($_GET['error'])){
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/ -->
-        Designed by <a href="https://wda.mackliu.com/s1120406/campus_hw_c/">Julie Chen. Yeah, it's moi</a>
+        Designed by <a href="https://wda.mackliu.com/s1120406/campus-hw_c2">Julie Chen. Yeah, it's moi</a>
       </div>
     </div>
   </footer><!-- End Footer -->
