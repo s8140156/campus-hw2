@@ -2,7 +2,6 @@
 if(!isset($_SESSION['login'])){
 	to("index.php");
 }
-// 應該是如果session未收到login訊息則直接轉回index.php
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -100,9 +99,7 @@ if(!isset($_SESSION['login'])){
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
-      .btn-secondary:hover{
-        /* color: white!important; */
-      }
+
     </style>
 
     

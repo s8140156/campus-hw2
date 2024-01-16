@@ -36,7 +36,7 @@
 									<input class="form-control" type="text" name="href[]" style="width:90%" value="<?= $row['href'];?>">
 								</td>
 								<td width="23%">
-									<input class="form-control" type="text" name="fontawesome[]" style="width:90%" value="<?= $row['fontawesome'];?>">
+									<textarea class="form-control" type="text" name="fontawesome[]" style="width:90%" value="<?= $row['fontawesome'];?>"></textarea>
 								</td>
 								<td width="23%">
 									<input class="form-control" type="text" name="text[]" style="width:90%" value="<?= $row['text'];?>">

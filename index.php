@@ -197,11 +197,11 @@ if(isset($_GET['error'])){
             </p> -->
             <?php
 			        if ($News->count(['sh' => 1]) > 5) {
-				      echo "<a href='./front/news.php' class='btn-learn-more'>Learn More</a>";
+				      echo "<a href='#' class='btn-learn-more'>Learn More</a>";
 		        	}
 			      ?>
             <!-- <a href="our-story.html" class="btn-learn-more">Learn More</a> -->
-		        <div id="altt" style="position: absolute; width: 350px; min-height: 100px; background-color: rgb(255, 255, 204); top: 50px; left: 130px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
+		        <div id="altt" style="position: absolute; width: 380px; min-height: 100px; background-color: rgb(255, 255, 204); top: 50px; left: 130px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
             
           </div>
         </div>
@@ -253,8 +253,8 @@ if(isset($_GET['error'])){
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="fa-solid fa-person-chalkboard"></i></div>
-            <h4 class="title"><a href="https://mackliu.github.io/php-book/">月光林地還是月光寶盒？</a></h4>
-            <p class="description">文藝青年嘔心瀝血之作，管他標題是不是跟月光族有關係，取字串要用什麼函式？我上課都講過了喔！</p>
+            <h4 class="title"><a href="https://mackliu.github.io/php-book/">月光林地還是月光仙子？</a></h4>
+            <p class="description">文藝青年嘔心瀝血之作，管他是不是要變身金星仙子，取字串要用什麼函式？我上課都講過了喔！</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="fa-solid fa-person-digging"></i></div>
