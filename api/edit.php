@@ -33,8 +33,10 @@ foreach($_POST['id'] as $key => $id){
                 $row['acc']=$_POST['acc'][$key];
                 $row['pw']=$_POST['pw'][$key];
             break;
-            case "menu":
+            case "tool":
 				$row['href']=$_POST['href'][$key];
+				$row['title']=$_POST['title'][$key];
+				$row['fontawesome']=$_POST['fontawesome'][$key];
 				$row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
 				// 因為switchcase run到case:menu 執行href後其實就停止了(會run不到default), 因munu還有sh欄位 所以要把這個般上來 
             break;
