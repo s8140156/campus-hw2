@@ -4,7 +4,7 @@
 			<h3 class="text-center mt-3">新增動態文字廣告</h3>
 			<hr>
 			<form action="./api/add.php" method="post" enctype="multipart/form-data">
-				<table class="tcol-8 m-auto">
+				<table class="col-8 m-auto">
 					<tr>
 						<!-- <td>動態文字廣告</td> -->
 						<td>
