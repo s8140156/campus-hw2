@@ -283,18 +283,18 @@ if(!isset($_SESSION['login'])){
                 校園映象資料管理
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="?do=total">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
                 進站總人數管理
               </a>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="?do=bottom">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
                 頁尾版權資料管理
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="?do=news">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
@@ -313,12 +313,12 @@ if(!isset($_SESSION['login'])){
                 班版文字管理
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="?do=menu">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
                 選單管理
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="?do=tool">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
