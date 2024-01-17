@@ -46,6 +46,9 @@ if(isset($_GET['error'])){
     .btn-success{
       background-color: #24325d!important;
     }
+    #footer p{
+      /* margin:0 0 2px 0; */
+    }
   </style>
 </head>
 
@@ -328,14 +331,15 @@ if(isset($_GET['error'])){
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div> -->
       <div class="copyright">
-        &copy; Copyright <strong><span>MeFamily</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>JCMF</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/ -->
-        Designed by <a href="https://wda.mackliu.com/s1120406/campus-hw_c2">Julie Chen. Yeah, it's moi</a>
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/ -->
+            Designed by <a href="https://wda.mackliu.com/s1120406/campus-hw_c2">Julie Chen. Yeah, it's moi</a>
+            <p><i class="fa-solid fa-arrow-up"></i>You may link FileZilla as above<i class="fa-solid fa-arrow-up"></i></p>
       </div>
     </div>
   </footer><!-- End Footer -->
