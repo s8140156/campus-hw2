@@ -25,33 +25,34 @@
 					<?php
 						$rows = $DB->all();
 						foreach ($rows as $row) {
+							// dd($row);
 							?>
 					<tbody>
-							<tr>
-								<td width="23%">
-									<input class="form-control" type="text" name="title[]" style="width:90%" value="<?= $row['title'];?>">
-									<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
-								</td>
-								<td width="23%">
-									<input class="form-control" type="text" name="href[]" style="width:90%" value="<?= $row['href'];?>">
-								</td>
-								<td width="23%">
-									<input class="form-control" type="text" name="fontawesome[]" style="width:90%" value="<?= $row['fontawesome'];?>">
-								</td>
-								<td width="23%">
-									<input class="form-control" type="text" name="text[]" style="width:90%" value="<?= $row['text'];?>">
-								</td>
-								<td width="7%">
-									<input class="form-check-input" type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+						<tr>
+							<td width="23%">
+								<input class="form-control" type="text" name="title[]" style="width:90%" value="<?= $row['title'];?>">
+								<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
+							</td>
+							<td width="23%">
+								<input class="form-control" type="text" name="href[]" style="width:90%" value="<?= $row['href'];?>">
+							</td>
+							<td width="23%">
+								<input class="form-control" type="text" name="fontawesome[]" style="width:90%" value="<?=html_entity_decode($row['fontawesome']);?>">
+							</td>
+							<td width="23%">
+								<input class="form-control" type="text" name="text[]" style="width:90%" value="<?= $row['text'];?>">
+							</td>
+							<td width="7%">
+								<input class="form-check-input" type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
 								<!-- <input class="form-check-input" type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
-									<!-- <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
-								</td>
-								<td width="7%">
-									<input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-								</td>
-		
-							</tr>
-		
+								<!-- <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
+							</td>
+							<td width="7%">
+								<input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+							</td>
+							
+						</tr>
+						
 						<?php
 						}
 						?>
