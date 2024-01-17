@@ -227,7 +227,7 @@ if(isset($_GET['error'])){
         foreach ($tools as $tool) {
         ?>
           <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><?=$tool['fontawesome'];?></div>
+            <div class="icon"><i class="fa-solid <?=$tool['fontawesome'];?>"></i></div>
             <h4 class="title"><a href="<?=$tool['href'];?>"><?=$tool['title'];?></a></h4>
             <p class="description"><?=$tool['text'];?></p>
           </div>
