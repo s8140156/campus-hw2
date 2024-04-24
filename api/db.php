@@ -102,8 +102,9 @@ class DB{
 
     }
 
-    private function a2s($array){
+    private function a2s($array){ //這邊是輸入進來的值 準備要轉成sql語句 最開始的地方
         foreach ($array as $col => $value) {
+            $value=$this->check($value); //<- 在輸入進來的任何值 使用function check()來檢查 檢查變數是否有特殊符號
             $tmp[] = "`$col`='$value'";
         }
         return $tmp;
@@ -128,6 +129,11 @@ class DB{
             // $rows = $this->pdo->query($sql)->fetchColumn();
             return $sql;
         } 
+    }
+    // 增加檢查及處理所有的參數的函式 檢查輸入進來的值從function a2s()那邊
+    function check($arg){
+        $arg=htmlspecialchars($arg);
+        return $arg;
     }
 
 }
