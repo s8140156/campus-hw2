@@ -20,9 +20,12 @@ if(isset($_FILES['img']['tmp_name'])){
 	move_uploaded_file($_FILES['img']['tmp_name'],"../img/".$_FILES['img']['name']);
 	$_POST['img']=$_FILES['img']['name'];
 }
-if($table != 'admin'){
+if($table != 'admin'){ 
 	$_POST['sh']=($table=='title')?0:1;
+}else{
+    $_POST['pw']=md5($_POST['pw']); // 在共用新增的程式 加else判斷 將post過來的pw 以md5()編碼再存進資料表
 }
+//這邊同步要在check.php登入檢查帳密時 要以編碼過後的字串去比對
 
 switch($table){
     case "menu";

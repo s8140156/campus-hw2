@@ -3,7 +3,7 @@
 include_once "db.php";
 // 通常程式使用到session要記得寫session_start(), but因為db已寫了session start()這邊不用在寫
 
-if($Admin->count(['acc'=>$_POST['acc'],'pw'=>$_POST['pw']])>0){
+if($Admin->count(['acc'=>$_POST['acc'],'pw'=>md5($_POST['pw'])])>0){ // 這邊同步要在check.php登入檢查帳密時 要以編碼過後的字串去比對
 	$_SESSION['login']=$_POST['acc']; //如果上述判斷有的話, 因為也沒撈資料 直接post的資料存進session紀錄狀態
 	to("../back.php");
 }else{
